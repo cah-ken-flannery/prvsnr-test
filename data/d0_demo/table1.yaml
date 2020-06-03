@@ -1,0 +1,65 @@
+{
+  "apiVersion": "cft.dev/v1alpha1",
+  "kind": "Table",
+  "metadata": {
+    "name": "table1"
+  },
+  "spec": {
+    "name": "ADRC_CV",
+    "fields": [
+      {
+        "name": "CLIENT"
+      },
+      {
+        "name": "ADDRNUMBER",
+        "regulatory": "hipaa",
+        "anonymizer": "HASH",
+        "dateset_suffixes": [
+          "foo"
+        ]
+      },
+      {
+        "name": "DATE_FROM",
+        "regulatory": "none",
+        "anonymizer": "HASH",
+        "dateset_suffixes": [
+          "zoo",
+          "foo"
+        ]
+      },
+      {
+        "name": "NATION",
+        "regulatory": "gdpr",
+        "anonymizer": "HASH",
+        "dateset_suffixes": [
+          "bar"
+        ]
+      },
+      {
+        "name": "DATE_TO",
+        "regulatory": "none"
+      },
+      {
+        "name": "TITLE"
+      },
+      {
+        "name": "NAME1"
+      },
+      {
+        "name": "NAME2"
+      },
+      {
+        "name": "NAME3"
+      },
+      {
+        "name": "NAME4"
+      },
+      {
+        "name": "NAME_TEXT"
+      },
+      {
+        "name": "D0_UPDATE_STP"
+      }
+    ]
+  }
+}

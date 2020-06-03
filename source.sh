@@ -1,0 +1,6 @@
+export ENVIRONMENT="dev"
+export STORAGE_PROJECT_ID="datamarket-np-cah "
+export VIEW_PROJECT_ID="datamarket-np-cah"
+export TERRAFORM_STATE_BUCKET="cool-state-bucket"
+#export WRITER_SERVICE_ACCOUNT="sa-provisioner@clf-cah-data-core.iam.gserviceaccount.com"
+export WRITER_SERVICE_ACCOUNT="sa-orchestrator@datamarket-np-cah.iam.gserviceaccount.com"

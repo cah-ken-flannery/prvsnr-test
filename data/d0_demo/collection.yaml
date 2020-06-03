@@ -1,0 +1,13 @@
+apiVersion: cft.dev/v1alpha1
+kind: DataCollection
+spec:
+  dataset:
+    datasetType: SOURCE_IDENTICAL
+    businessSegment: MED
+    applicationName: DEMO
+    instanceName: null
+    sourceSchema: SE2
+    suffix: null
+  permissions: {}
+  dataRequestor: ken.flannery@cardinalhealth.com
+  dataOwner: jeffrey.lefeld@cardinalhealth.com

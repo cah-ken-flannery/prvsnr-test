@@ -1,0 +1,78 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  # name must match the spec fields below, and be in the form: <plural>.<group>
+  name: datacollections.cft.dev
+spec:
+  group: cft.dev
+  scope: Namespaced
+  names:
+    plural: datacollections
+    singular: datacollection
+    kind: DataCollection
+  preserveUnknownFields: false
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        required:
+        - spec
+        properties:
+          spec:
+            # DatacollectionSpec
+            type: object
+            properties:
+              dataRequestor:
+                type: string
+                description: "Email of the dataset requestor"
+                pattern: '[a-z0-9!#$%&''*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&''*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?'
+              dataOwner:
+                type: string
+                description: "Email of the dataset owner"
+                pattern: '[a-z0-9!#$%&''*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&''*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?'
+              dataset:
+                type: object
+                properties:
+                  datasetType:
+                    type: string
+                    enum:
+                      - SOURCE_IDENTICAL
+                      # - PREPARED
+                      # - REFINED
+                      # - SOURCE_IDENTICAL_VIEW (these are auto-generated)
+                  businessSegment:
+                    type: string
+                    enum:
+                      - PHARMA
+                      - MED
+                      - CORP
+                  applicationName:
+                    type: string
+                  instanceName:
+                    type: string
+                    nullable: true
+                  sourceSchema:
+                    type: string
+                  suffix:
+                    type: string
+                    nullable: true
+                required:
+                  - datasetType
+                  - businessSegment
+                  - applicationName
+                  - sourceSchema
+              permissions:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    type: string
+                    pattern: '(user|group|serviceAccount|specialGroup):(.+)'
+            required:
+              - dataRequestor
+              - dataOwner
+              - dataset
+            # /DatacollectionSpec
