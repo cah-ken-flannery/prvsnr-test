@@ -4,7 +4,7 @@ module "dataset_source-identical" {
 
   dataset_id   = "D0_MED_DEMO_SE2"
   dataset_name = "D0_MED_DEMO_SE2"
-  project_id   = "datamarket-np-cah "
+  project_id   = "datamarket-np-cah"
 
   dataset_labels = {
     datasetname    = "d0_med_demo_se2"
@@ -105,7 +105,7 @@ module "dataset_source-identical_auth" {
     group_by_email = "pso-cardinal-health@google.com"
     }, {
     role          = "roles/bigquery.dataEditor"
-    user_by_email = "sa-orchestrator@datamarket-np-cah.iam.gserviceaccount.com"
+    user_by_email = "sa-provisioner@datamarket-np-cah.iam.gserviceaccount.com"
   }]
 
   authorized_views = [{
