@@ -4,7 +4,7 @@ module "dataset_source-identical" {
 
   dataset_id   = "D0_MED_DEMO_SE2"
   dataset_name = "D0_MED_DEMO_SE2"
-  project_id   = "clf-cah-data-core"
+  project_id   = "datamarket-np-cah "
 
   dataset_labels = {
     datasetname    = "d0_med_demo_se2"
@@ -23,7 +23,7 @@ module "dataset_source-identical-view_public" {
 
   dataset_id   = "D0_MED_DEMO_SE2_VW"
   dataset_name = "D0_MED_DEMO_SE2_VW"
-  project_id   = "clf-cah-data-core"
+  project_id   = "datamarket-np-cah"
 
   dataset_labels = {
     datasetname    = "d0_med_demo_se2_vw"
@@ -42,7 +42,7 @@ module "dataset_source-identical-view_foo" {
 
   dataset_id   = "D0_MED_DEMO_SE2_VW_foo"
   dataset_name = "D0_MED_DEMO_SE2_VW_foo"
-  project_id   = "clf-cah-data-core"
+  project_id   = "datamarket-np-cah"
 
   dataset_labels = {
     datasetname    = "d0_med_demo_se2_vw_foo"
@@ -61,7 +61,7 @@ module "dataset_source-identical-view_zoo" {
 
   dataset_id   = "D0_MED_DEMO_SE2_VW_zoo"
   dataset_name = "D0_MED_DEMO_SE2_VW_zoo"
-  project_id   = "clf-cah-data-core"
+  project_id   = "datamarket-np-cah"
 
   dataset_labels = {
     datasetname    = "d0_med_demo_se2_vw_zoo"
@@ -80,7 +80,7 @@ module "dataset_source-identical-view_bar" {
 
   dataset_id   = "D0_MED_DEMO_SE2_VW_bar"
   dataset_name = "D0_MED_DEMO_SE2_VW_bar"
-  project_id   = "clf-cah-data-core"
+  project_id   = "datamarket-np-cah"
 
   dataset_labels = {
     datasetname    = "d0_med_demo_se2_vw_bar"
@@ -105,7 +105,7 @@ module "dataset_source-identical_auth" {
     group_by_email = "pso-cardinal-health@google.com"
     }, {
     role          = "roles/bigquery.dataEditor"
-    user_by_email = "sa-provisioner@clf-cah-data-core.iam.gserviceaccount.com"
+    user_by_email = "sa-orchestrator@datamarket-np-cah.iam.gserviceaccount.com"
   }]
 
   authorized_views = [{
